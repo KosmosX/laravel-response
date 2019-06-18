@@ -1,6 +1,6 @@
 {
-    "name": "kosmosx/response-lara",
-    "description": "Response service for Symfony & Laravel/Lumen Framework.",
+    "name": "kosmosx/laravel-response",
+    "description": "Response service for Laravel and Lumen Framework.",
     "keywords": ["Symfony", "laravel", "lumen", "rest", "http", "response"],
     "license": "MIT",
     "type": "package",

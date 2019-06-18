@@ -6,7 +6,7 @@
 ### Let's go
 **Composer**
 
-    composer require kosmosx/response-lara
+    composer require kosmosx/laravel-response
     
 **Laravel / Lumen register providers**
 
@@ -22,16 +22,8 @@
 **Use**
 
     use Kosmosx\Response\RestResponse;
-    use RestResponse; //Facade alias
-    
-    
-**PHP 7.1**
-
-    require __DIR__ . '/vendor/autoload.php';
-    $response = new Kosmosx\Response\RestResponse();
-
-    $handler = Kosmosx\Response\Exceptions\Handler();
-    $handler->setExceptionHandler();  
+    use RestResponse; //Facade alias 
+    use FactoryResponse; //Or use factory class
     
 ### Benchmark
 
