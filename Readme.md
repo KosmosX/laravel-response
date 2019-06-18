@@ -1,15 +1,12 @@
 # Documentation 
-![](https://img.shields.io/badge/version-1.0.2-green.svg) 
+![](https://img.shields.io/badge/version-1.0.0-green.svg) 
 ![](https://img.shields.io/badge/Laravel->=5.6-blue.svg) 
 ![](https://img.shields.io/badge/Lumen->=5.6-blue.svg) 
-![](https://img.shields.io/badge/Symfony->=4.2-blue.svg) 
-
-
 
 ### Let's go
 **Composer**
 
-    composer require kosmosx/response
+    composer require kosmosx/response-lara
     
 **Laravel / Lumen register providers**
 

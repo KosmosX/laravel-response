@@ -14,51 +14,51 @@
 
 	class FactoryResponse extends Factory
 	{
-		public function statusResponse(StatusService $status): RestResponse {
+		public static function statusResponse(StatusService $status): RestResponse {
 			$code = $status->status();
 
 			switch ($code) {
 				case 201:
-					$response = $this->created();
+					$response = self::created();
 					break;
 				case 202:
-					$response = $this->accepted();
+					$response = self::accepted();
 					break;
 				case 204:
-					$response = $this->noContent();
+					$response = self::noContent();
 					break;
 				case 400:
-					$response = $this->badRequest();
+					$response = self::badRequest();
 					break;
 				case 401:
-					$response = $this->unauthorized();
+					$response = self::unauthorized();
 					break;
 				case 403:
-					$response = $this->forbidden();
+					$response = self::forbidden();
 					break;
 				case 404:
-					$response = $this->notFound();
+					$response = self::notFound();
 					break;
 				case 405:
-					$response = $this->methodNotAllowed();
+					$response = self::methodNotAllowed();
 					break;
 				case 408:
-					$response = $this->requestTimeout();
+					$response = self::requestTimeout();
 					break;
 				case 412:
-					$response = $this->preconditionFailed();
+					$response = self::preconditionFailed();
 					break;
 				case 415:
-					$response = $this->mediaType();
+					$response = self::mediaType();
 					break;
 				case 416:
-					$response = $this->rangeNotSatisfiable();
+					$response = self::rangeNotSatisfiable();
 					break;
 				case 500:
-					$response = $this->internal();
+					$response = self::internal();
 					break;
 				case 304:
-					return $this->notModified();
+					return self::notModified();
 					break;
 				default:
 					$response = new RestResponse(null, $code ?: 200);
@@ -80,7 +80,7 @@
 
 			if (isset($response))
 				return $response;
-			else
-				return $this->internal()->withMessage('Response not generated');
+
+			return self::throwException('Response not generated');
 		}
 	}
