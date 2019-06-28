@@ -73,10 +73,13 @@
 
 			if ($data = $status->data()) {
 				if ($status->isFail())
-					$response->withValidation($data);
+					$response->withError($data);
 				else
 					$response->withContent(null, $data);
 			}
+
+			if($validate = $status->validate())
+				$response->withValidation($validate);
 
 			if (isset($response))
 				return $response;
