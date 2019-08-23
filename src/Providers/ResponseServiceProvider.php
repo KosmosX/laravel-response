@@ -28,8 +28,8 @@
 		 */
 		protected function registerAlias()
 		{
-			class_alias(\Kosmosx\Response\Laravel\Facades\FactoryResponse::class, 'FactoryResponse');
-			class_alias(\Kosmosx\Response\Laravel\Facades\RestResponse::class, 'RestResponse');
+			$this->app->alias(\Kosmosx\Response\Laravel\Facades\FactoryResponse::class, 'FactoryResponse');
+			$this->app->alias(\Kosmosx\Response\Laravel\Facades\RestResponse::class, 'RestResponse');
 		}
 
 		/**
