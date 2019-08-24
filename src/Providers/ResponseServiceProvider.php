@@ -19,27 +19,9 @@
 		 */
 		public function register()
 		{
-			$this->registerAlias();
-			$this->registerServices();
-		}
+			register_alias(\Kosmosx\Response\Laravel\Facades\FactoryResponse::class, 'FactoryResponse');
+			register_alias(\Kosmosx\Response\Laravel\Facades\RestResponse::class, 'RestResponse');
 
-		/**
-		 * Load alias
-		 */
-		protected function registerAlias()
-		{
-			$this->app->alias(\Kosmosx\Response\Laravel\Facades\FactoryResponse::class, 'FactoryResponse');
-			$this->app->alias(\Kosmosx\Response\Laravel\Facades\RestResponse::class, 'RestResponse');
-		}
-
-		/**
-		 * Register Services
-		 */
-		protected function registerServices()
-		{
-			/**
-			 * Service Response
-			 */
 			$this->app->singleton('factory.response', 'Kosmosx\Response\Laravel\FactoryResponse');
 			$this->app->bind('service.response', 'Kosmosx\Response\RestResponse');
 		}
